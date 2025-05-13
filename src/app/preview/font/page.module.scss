@@ -24,7 +24,7 @@
 
 .inputField {
   width: 100%;
-  min-height: 380px;
+  min-height: 240px;
   resize: none;
   border: none;
   outline: none;
@@ -114,7 +114,7 @@
   }
 }
 
-@media (min-width: 576px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .inputField {
     font-size: 1.2rem;
 
