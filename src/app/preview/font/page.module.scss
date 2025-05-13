@@ -16,10 +16,10 @@
 }
 
 .flexWrapper {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .inputField {
@@ -111,5 +111,15 @@
 
   &:hover {
     background-color: #444;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .inputField {
+    font-size: 1.2rem;
+
+    &.handwriting {
+      font-size: 1.8rem;
+    }
   }
 }
