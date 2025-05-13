@@ -1,0 +1,115 @@
+@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+
+@font-face {
+  font-family: 'Yuni_ddingddang';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/naverfont_11@1.0/Yuni_ddingddang.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.flexWrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputField {
+  width: 100%;
+  min-height: 380px;
+  resize: none;
+  border: none;
+  outline: none;
+  font-size: 2.5rem;
+  background-color: transparent;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.handwriting {
+    font-size: 3.8rem;
+  }
+
+  &::placeholder {
+    color: #ccc;
+  }
+}
+
+.gothic {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.handwriting {
+  font-family: 'Yuni_ddingddang', cursive;
+}
+
+.consoleSection {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.charCount {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.fontName {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.fontDescription {
+  font-size: 0.875rem;
+  color: #444;
+  text-align: center;
+  max-width: 500px;
+  white-space: pre-line;
+}
+
+.toggleGroup {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.toggleButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: #333;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.toggleButton:hover {
+  background-color: #f0f0f0;
+}
+
+.active {
+  background-color: #333;
+  color: white;
+  border-color: #333;
+
+  &:hover {
+    background-color: #444;
+  }
+}
