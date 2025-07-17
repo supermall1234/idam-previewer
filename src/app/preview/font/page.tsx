@@ -1,10 +1,8 @@
 'use client';
 
-import { ReactNode, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import styles from './page.module.scss';
 import emojis from './svgIcons';
-
-type Token = string | number
 
 const emojiDict: { [key: number]: string } = {
     1: '🐶',
@@ -165,14 +163,4 @@ function EmojiButton({
     return (
         <a onClick={onClick}><CurrentEmoji /></a>
     )
-}
-
-function placeCaretAtEnd(el: HTMLElement) {
-    el.focus();
-    const sel = window.getSelection()!;
-    const range = document.createRange();
-    range.selectNodeContents(el);
-    range.collapse(false);
-    sel.removeAllRanges();
-    sel.addRange(range);
 }
