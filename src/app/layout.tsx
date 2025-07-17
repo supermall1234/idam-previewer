@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "슈퍼최저가몰",
-  description: "판촉물 대량발주 전문업체 슈퍼최저가몰",
+  title: "이담리테일",
+  description: "단 한 개도 도매 가격에, 이담리테일",
 };
 
 export default function RootLayout({
