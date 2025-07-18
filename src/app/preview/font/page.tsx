@@ -77,6 +77,79 @@ const emojiDict: { [key: number]: string } = {
     70: '🗫',
 }
 
+const emojiToNum: { [key: string]: string } = {
+    '🐶': '1',
+    '🐱': '2',
+    '😊': '3',
+    '👦': '4',
+    '👶': '5',
+    '💓': '6',
+    '😏': '7',
+    '🙂': '8',
+    '🎀': '9',
+    '✴': '10',
+    '✨': '11',
+    '⚝': '12',
+    '💖': '13',
+    '❤': '14',
+    '🎵': '15',
+    '🍎': '16',
+    '🍏': '17',
+    '🔋': '18',
+    '💗': '19',
+    '🪫': '20',
+    '☁': '21',
+    '☀': '22',
+    '🌻': '23',
+    '🍒': '24',
+    '🌹': '25',
+    '😋': '26',
+    '🐻': '27',
+    '☘': '28',
+    '🐰': '29',
+    '🌞': '30',
+    '🌙': '31',
+    '🌒': '32',
+    '🌿': '33',
+    '🥦': '34',
+    '🍃': '35',
+    '🍁': '36',
+    '👻': '37',
+    '🍞': '38',
+    '🍕': '39',
+    '🍔': '40',
+    '🥣': '41',
+    '🥄': '42',
+    '🍴': '43',
+    '🔴': '44',
+    '🐟': '45',
+    '🍦': '46',
+    '🍧': '47',
+    '🍨': '48',
+    '🥝': '49',
+    '🥘': '50',
+    '🍛': '51',
+    '🥡': '52',
+    '✂': '53',
+    '💃': '54',
+    '🥳': '55',
+    '👯': '56',
+    '🎊': '57',
+    '🧙': '58',
+    '🎂': '59',
+    '🎉': '60',
+    '🏠': '61',
+    '🏘': '62',
+    '🏎': '63',
+    '🚓': '64',
+    '💬': '65',
+    '🗨': '66',
+    '🗯': '67',
+    '👁': '68',
+    '🗩': '69',
+    '🗫': '70',
+}
+
 export default function Home() {
 
     const [text, setText] = useState<string>('');
@@ -105,6 +178,31 @@ export default function Home() {
         });
     }
 
+    const handleEmptyButtonClick = () => {
+        setText("")
+    }
+
+    const handleCopyButtonClick = async () => {
+        if (text.length <= 0) {
+            alert('문구를 입력해주세요')
+            return
+        }
+        const res: string[] = []
+        for (const char of text) {
+            if (char in emojiToNum) {
+                res.push(`(${emojiToNum[char]}번)`)
+            } else {
+                res.push(char)
+            }
+        }
+        try {
+            await navigator.clipboard.writeText(res.join('').replace(/(?:\r\n|\r|\n)/g, '\\n'))
+            alert('복사 성공! 각인문구 란에 붙여넣어주세요')
+        } catch (err) {
+            alert('복사에 실패했어요.')
+        }
+    }
+
     return (
         <main className={styles.container}>
 
@@ -120,12 +218,18 @@ export default function Home() {
             </div>
 
             <section className={styles.consoleSection}>
+
                 <div className={styles.charCount}>
                     {text.length} / {maxLength}
                 </div>
 
                 <div className={styles.fontName}>
                     한글 ({fontStyle})
+                </div>
+
+                <div className={styles.buttons}>
+                    <button className={styles.empty} onClick={handleEmptyButtonClick}>지우기</button>
+                    <button className={styles.copy} onClick={handleCopyButtonClick}>복사하기</button>
                 </div>
 
                 <div className={styles.emojiPannel}>
