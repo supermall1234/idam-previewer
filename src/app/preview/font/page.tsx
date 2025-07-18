@@ -199,6 +199,7 @@ export default function Home() {
             await navigator.clipboard.writeText(res.join('').replace(/(?:\r\n|\r|\n)/g, '\\n'))
             alert('복사 성공! 각인문구 란에 붙여넣어주세요')
         } catch (err) {
+            console.log(err)
             alert('복사에 실패했어요.')
         }
     }
