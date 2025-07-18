@@ -209,6 +209,7 @@ export default function Home() {
 
             <div className={styles.flexWrapper}>
                 <textarea
+                    spellCheck={false}
                     id='preview'
                     ref={ref}
                     className={`${styles.inputField} ${styles['font' + fontStyle]}`}
