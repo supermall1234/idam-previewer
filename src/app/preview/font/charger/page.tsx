@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react';
 import styles from './page.module.scss';
-import emojis, { emojiDict, emojiToNum } from './svgIcons';
+import emojis, { emojiDict, emojiToNum } from '../svgIcons';
 
 
 export default function Home() {
@@ -81,7 +81,7 @@ export default function Home() {
                 </div>
 
                 <div className={styles.fontName}>
-                    한글 ({fontStyle})
+                    {fontStyle}번 폰트
                 </div>
 
                 <div className={styles.buttons}>
@@ -105,7 +105,7 @@ export default function Home() {
                             className={`${styles.toggleButton} ${i == fontStyle ? styles.active : ""}`}
                             onClick={() => setFontStyle(i)}
                             key={i}>
-                            <span>한글(</span>{i}<span>)</span>
+                            {i}<span>번 폰트</span>
                         </button>)}
                 </div>
             </section>

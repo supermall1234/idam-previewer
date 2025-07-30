@@ -1,0 +1,302 @@
+@font-face {
+  font-family: 'Godo';
+  font-style: normal;
+  font-weight: 400;
+  src: url('//fastly.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff2') format('woff2'), url('//fastly.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SBAggroB';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SDMiSaeng';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SDMiSaeng.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Arita-dotum-Medium';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-dotum-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretty_Left_handed';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/naverfont_09@1.0/Pretty_Left_handed.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Beeunhye';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// 이모지 폰트 관련
+@font-face {
+  font-family: 'idam-icons';
+  src: url('/fonts/idam-icons.eot?m9c2sq');
+  src: url('/fonts/idam-icons.eot?m9c2sq#iefix') format('embedded-opentype'),
+    url('/fonts/idam-icons.ttf?m9c2sq') format('truetype'),
+    url('/fonts/idam-icons.woff?m9c2sq') format('woff'),
+    url('/fonts/idam-icons.svg?m9c2sq#idam-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.flexWrapper {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputField {
+  width: 100%;
+  min-height: 240px;
+  resize: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  >span>svg {
+    height: 2rem;
+    width: 2rem;
+    display: inline-block;
+    margin: 0 5px;
+  }
+
+  &.font1,
+  &.font2,
+  &.font3 {
+    font-size: 2.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &.font4,
+  &.font5,
+  &.font6 {
+    font-size: 3.8rem;
+
+    @media (max-width: 768px) {
+      font-size: 2.1rem;
+    }
+  }
+
+  &::placeholder {
+    color: #ccc;
+  }
+}
+
+.font1 {
+  font-family: 'idam-icons', 'Godo', sans-serif;
+  font-weight: 400;
+}
+
+.font2 {
+  font-family: 'idam-icons', 'SBAggroB', sans-serif;
+  font-weight: 700;
+}
+
+.font3 {
+  font-family: 'idam-icons', 'Arita-dotum-Medium', sans-serif;
+  font-weight: 500;
+}
+
+.font4 {
+  font-family: 'idam-icons', 'SDMiSaeng', sans-serif;
+}
+
+.font5 {
+  font-family: 'idam-icons', 'Beeunhye', sans-serif;
+}
+
+.font6 {
+  font-family: 'idam-icons', 'Pretty_Left_handed', sans-serif;
+}
+
+.consoleSection {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  >.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    >button {
+      font-size: 0.8rem;
+      padding: 8px 12px;
+      border-radius: 8px;
+      outline: 0;
+      border: 0;
+      cursor: pointer;
+      font-weight: 500;
+
+      &.empty {
+        background-color: #e7e7e7;
+        color: #444;
+      }
+
+      &.copy {
+        background-color: #333;
+        color: #eee;
+      }
+    }
+  }
+}
+
+.charCount {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.fontName {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.emojiPannel {
+
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 20px;
+
+  max-width: 1080px;
+
+  >a {
+    display: inline-block;
+    padding: 7px;
+    box-sizing: content-box;
+    width: 2rem;
+    height: 2rem;
+
+    @media (max-width: 768px) {
+
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    >svg {
+
+      width: 2rem;
+      height: 2rem;
+      opacity: 0.4;
+      cursor: pointer;
+
+      transition: opacity 0.2s cubic-bezier();
+
+      &:hover {
+        opacity: 1;
+      }
+
+      @media (max-width: 768px) {
+
+        width: 1.5rem;
+        height: 1.5rem;
+
+        opacity: 0.8;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+
+
+  @media (max-width: 768px) {
+    max-height: 200px;
+    overflow-y: scroll;
+  }
+}
+
+.fontDescription {
+  font-size: 0.875rem;
+  color: #444;
+  text-align: center;
+  max-width: 500px;
+  white-space: pre-line;
+}
+
+.toggleGroup {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.toggleButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: #333;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  >span {
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.toggleButton:hover {
+  background-color: #f0f0f0;
+}
+
+.active {
+  background-color: #333;
+  color: white;
+  border-color: #333;
+
+  &:hover {
+    background-color: #444;
+  }
+}
+
+@media (max-width: 767px) {
+  .inputField {
+    font-size: 1.2rem;
+
+    &.handwriting {
+      font-size: 1.8rem;
+    }
+  }
+}
